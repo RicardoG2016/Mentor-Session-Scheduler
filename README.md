@@ -1,2 +1,24 @@
-# Mentor-Session-Scheduler
-A tool to help students schedule 1:1 time with each other. It would allow for students to sign in, create appointment slots, and allow other students to fill them in.
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
