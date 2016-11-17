@@ -1,10 +1,10 @@
 <h1>Appointments</h1>
-<%= link_to 'New Appointment', new_appointment_path %>
 <ul>
 	<% @appointments.each do |appt| %>
 		<li>
-			<%= appt.topic %> | Mentor Name <br>
-			Date ~ Time
+			<%= appt.topic %> <br>
+			<%= display_datetime(appt) %>
+			<%= appt.mentor.first_name %>
 		</li>
 	<% end %>
 </ul>

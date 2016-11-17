@@ -1,5 +1,6 @@
 class Appointment < ApplicationRecord
-	# belongs_to :user
+	belongs_to :mentor, class_name: "User"
+	belongs_to :student, class_name: "User", optional: true
 	validates :start_time, presence: true
 	validates :topic, presence: true
 	validates :interval, presence: true
@@ -19,11 +20,11 @@ class Appointment < ApplicationRecord
 		end
 		time[1].slice!(-2..-1)
 		minute = time[1].to_i
-		Time.new(year, month, day, hour, minute)
+		DateTime.new(year, month, day, hour, minute)
 	end
 
 	def generate_end_time(params)
 		start_time = self.generate_start_time(params)
-		start_time + ( params[:appointment][:interval].to_i * 60 )
+		start_time + params[:appointment][:interval].to_i.minutes
 	end
 end

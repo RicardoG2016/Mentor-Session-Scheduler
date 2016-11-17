@@ -27,6 +27,8 @@ class AppointmentsController < ApplicationController
     @appointment.start_time = @appointment.generate_start_time(params)
     @appointment.end_time = @appointment.generate_end_time(params)
     @appointment.interval = params[:appointment][:interval].to_i
+    @appointment.available = true
+    @appointment.mentor = current_user
     if @appointment.save
       redirect_to "/"
     else

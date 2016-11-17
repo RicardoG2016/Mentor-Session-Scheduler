@@ -1,9 +1,5 @@
 module AppointmentsHelper
-	def display_date(appt)
-		
-	end
-
-	def display_time(appt)
-
+	def display_datetime(appt)
+		i = local_time(appt.start_time)
 	end
 end
