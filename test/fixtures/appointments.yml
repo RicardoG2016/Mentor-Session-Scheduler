@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  topic: MyString
+  available: false
+  start_time: 2016-11-16 15:09:53
+  end_time: 2016-11-16 15:09:53
+  interval: 1
+  mentor_id: 1
+  student_id: 1
+
+two:
+  topic: MyString
+  available: false
+  start_time: 2016-11-16 15:09:53
+  end_time: 2016-11-16 15:09:53
+  interval: 1
+  mentor_id: 1
+  student_id: 1

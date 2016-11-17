@@ -1,0 +1,12 @@
+<%= form_for @appointment do |f| %>
+  <%= f.label :topic %>
+  <%= f.text_field :topic, placeholder: 'Biology' %> <br>
+  <%= f.label :date %>
+  <%= text_field_tag(:date, nil, placeholder: '01/16/1998') %> <br>
+  <%= f.label :start_time %> 
+  <%= text_field_tag(:start_time, nil, placeholder: '5:30pm') %> <br>
+  <%= f.label :interval %>
+  <%= f.select :interval, [30, 60] %> <br>
+  <%= f.submit "Create" %>
+<% end %>
+
