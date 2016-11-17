@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # devise_for :users
 
   devise_for :users, controllers: {
   	registrations: "users/registrations"
@@ -10,6 +9,10 @@ Rails.application.routes.draw do
 	root "appointments#index"
 
 	post "appointments/:id/signup" => 'appointments#signup'
+
+	get 'users/show', to: 'users#show'
+
+	delete '/appointments/:id' => 'appointments#destroy' 
 
   resources :appointments
 end

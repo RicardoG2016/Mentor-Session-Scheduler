@@ -56,14 +56,22 @@ class AppointmentsController < ApplicationController
   # PATCH/PUT /appointments/1
   # PATCH/PUT /appointments/1.json
   def update
-
-
+    @appointment = Appointments.find(params[:id])
+    @appointment.available = true
+    @appointment.student_id = nil
+    @appointment.save
+    if @appointment.save
+      redirect_to 'users/show'
+    else
+      flash[:notice] = "Post successfully created"
+    end
   end
 
   # DELETE /appointments/1
   # DELETE /appointments/1.json
   def destroy
-    
+    Appointment.find(params[:id]).destroy
+    render 'users/show'
   end
 
 end
