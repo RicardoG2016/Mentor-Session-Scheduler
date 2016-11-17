@@ -14,7 +14,8 @@
     <nav> 
       <%= link_to "Home", root_path %>
 
-    <% if current_user %> 
+    <% if current_user %>
+      <a href="/users/show"><%= current_user.first_name %> <%= current_user.last_name[0].upcase %>. </a>
       <a href="/users/logout">Logout</a>
       <%= link_to "Create Appointment", new_appointment_path %>
     <% else %>

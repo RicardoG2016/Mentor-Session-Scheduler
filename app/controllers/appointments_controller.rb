@@ -56,12 +56,12 @@ class AppointmentsController < ApplicationController
   # PATCH/PUT /appointments/1
   # PATCH/PUT /appointments/1.json
   def update
-    @appointment = Appointments.find(params[:id])
+    @appointment = Appointment.find(params[:id])
     @appointment.available = true
     @appointment.student_id = nil
     @appointment.save
     if @appointment.save
-      redirect_to 'users/show'
+      redirect_to :back and return
     else
       flash[:notice] = "Post successfully created"
     end
@@ -71,7 +71,7 @@ class AppointmentsController < ApplicationController
   # DELETE /appointments/1.json
   def destroy
     Appointment.find(params[:id]).destroy
-    render 'users/show'
+    redirect_to :back
   end
 
 end

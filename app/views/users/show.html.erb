@@ -8,7 +8,7 @@
           <% Appointment.where(mentor: current_user).each do |meeting| %>
           
           <li> 
-              <%= meeting.topic %> | <%= meeting.available %> | <%= display_datetime(meeting) %> | <%= meeting.interval %> 
+              <%= meeting.topic %> | <%= display_datetime(meeting) %> (<%= meeting.interval %> minutes) 
               <form  method="post" action="/appointments/<%= meeting.id %>"> 
                 <input type="hidden" name="_method" value="delete">
                 <input type="submit" value="Cancel Appointment">
@@ -27,8 +27,8 @@
           <% Appointment.where(student: current_user).each do |meeting| %>
 
           <li> 
-              <%= meeting.topic %> | <%= meeting.available %> | <%= meeting.start_time %> | <%= meeting.interval %> 
-              <form  method="put" action="/appointments/<%= meeting.id %>"> 
+              <%= meeting.topic %> | <%= display_datetime(meeting) %> (<%= meeting.interval %> minutes) 
+              <form  method="post" action="/appointments/<%= meeting.id %>"> 
                 <input type="hidden" name="_method" value="put">
                 <input type="submit" value="Cancel Appointment">
               </form>
