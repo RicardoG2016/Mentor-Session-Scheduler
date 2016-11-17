@@ -1,0 +1,17 @@
+<h1>Appointments</h1>
+<ul>
+	<% @appointments.each do |appt| %>
+		<li>
+			<%= appt.topic %> <br>
+			<%= display_datetime(appt) %>
+			<%= appt.mentor.first_name %>
+		</li>
+	<% end %>
+</ul>
+
+
+
+
+
+
+

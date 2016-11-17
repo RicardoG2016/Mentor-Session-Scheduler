@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MentorSessionScheduler</title>
-
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <title>Mentor Session Scheduler</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -20,7 +16,7 @@
 
     <% if current_user %> 
       <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-    
+      <%= link_to "Create Appointment", new_appointment_path %>
     <% else %>
       <%= link_to "Sign in", new_user_session_path %>
       <%= link_to "Register", new_user_registration_path %>
