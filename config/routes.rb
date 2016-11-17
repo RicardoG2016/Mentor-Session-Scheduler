@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
 	root "appointments#index"
 
+	post "appointments/:id/signup" => 'appointments#signup'
+
   resources :appointments
 end

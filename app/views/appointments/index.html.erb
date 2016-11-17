@@ -3,12 +3,14 @@
 	<% if @appointments %>
 		<% @appointments.each do |appt| %>
 			<li>
-				<%= appt.topic %>
+				<%= appt.topic %> | <%= appt.mentor.first_name %> <%= appt.mentor.last_name[0].upcase %>.
 				<br>
 				<%= display_datetime(appt) %>
 				(<%= appt.interval %> mins)
 				<br>
-				<%= appt.mentor.first_name %>
+				<form action="appointments/<%= appt.id %>/signup" method="post">
+					<input type="submit" value="Sign Up">
+				</form>
 			</li>
 		<% end %>
 	<% end %>
