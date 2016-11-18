@@ -13,10 +13,11 @@ class AppointmentsController < ApplicationController
       appt.student = current_user
       appt.save
     end
-    redirect_to(appointments_path)
+    redirect_to("/")
   end 
 
   def index
+    redirect_to(new_user_session_path) and return if !current_user
     @appointments = Appointment.where(available: true)
   end
 
@@ -50,7 +51,7 @@ class AppointmentsController < ApplicationController
       @appointment.available = true
       @appointment.mentor = current_user
       if @appointment.save
-        redirect_to "/"
+        redirect_to "/appointments/index"
       else
         render "new"
       end

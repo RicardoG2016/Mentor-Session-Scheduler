@@ -1,15 +1,33 @@
-<%= form_for @appointment, html: {class: "appointment-form"} do |f| %>
-  <%= f.label :topic %>
-  <%= f.text_field :topic, placeholder: 'Biology' %> <br>
-  <%= f.label :date %>
-  <%= text_field_tag(:date, nil, placeholder: '01/16/1998') %> <br>
-  <%= f.label :start_time %> 
-  <%= text_field_tag(:start_time, nil, placeholder: '5:30pm') %> <br>
-  <%= f.label :interval %>
-  <%= f.select :interval, [30, 60] %> <br>
-  <%= f.submit "Create" %>
+<%= form_for @appointment, html: {class: "form-register"} do |f| %>
+  <div class="form-register-with-email">
+    <div class="form-white-background">
+      <div class="form-title-row">
+        <!-- optional -->
+        <h1> New Appointment </h1>
+      </div>
+      <div class="field">
+        <%= f.label :topic %><br>
+        <%= f.text_field :topic, placeholder: 'Biology' %>
+      </div>
+      <div class="field">
+        <%= f.label :date %><br>
+        <input type="text" name="date" placeholder="01/16/1998">
+      </div>
+      <div class="field">
+        <%= f.label :start_time %><br>
+        <input type="text" name="start_time" placeholder="5:30pm">
+      </div>
+      <div class="field">
+        <%= f.label :interval %><br>
+        <%= f.select :interval, ['30', '60']%>
+      </div>
+      <div class="form-row">
+        <%= f.button "Post Opening" %>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 <% if @error %>
-	<%= @error %>
+  <%= @error %>
 <% end %>

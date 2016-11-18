@@ -1,4 +1,4 @@
-.form-register{
+.form-register, .appointment-form {
     max-width: 1000px;
     width: 100%;
     margin: 0 auto;
@@ -155,6 +155,30 @@ div.text-vertical-center {
     width: 150px;
     font-size: 22px;
 }
+
+#user-show {
+    text-align: center;
+    margin: auto;
+}
+
+#user-show > h1 {
+    font-size: 30px;
+}
+
+#user-show > ul > h2 {
+    font-size: 22px;
+}
+
+ul {
+    list-style: none;
+}
+
+.field > label {
+    margin: 15px;
+    font-size: 17px;
+}
+
+
 
 
 
