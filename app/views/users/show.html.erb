@@ -13,10 +13,16 @@
 	              <% if meeting.student %>
 									<h3> Your Student: <%= meeting.student.first_name %> <%= meeting.student.last_name[0].upcase %>. </h3>
 	              <% end %>
+	              
 	              <form  method="post" action="/appointments/<%= meeting.id %>"> 
 	                <input type="hidden" name="_method" value="delete">
 	                <input type="submit" value="Cancel Appointment" class="btn" style="margin-top: 15px;">
 	              </form>
+						<!-- include the logic if date is passed the meeting end time -->
+	              <form method="get" action="/reviews/<%= meeting.id %>/new"> 
+	                <input type="submit" value="Provide feedback" class="btn" style="margin-top: 15px;">
+	              </form>
+
 	          </li>
 
 	        <% end %>
@@ -37,6 +43,11 @@
 	                <input type="hidden" name="_method" value="put">
 	                <input type="submit" value="Cancel Appointment" class="btn" style="margin-top: 15px;">
 	              </form>
+<!-- include the logic if date is passed the meeting end time -->
+	              <form method="get" action="/reviews/<%= meeting.id %>/new"> 
+	                <input type="submit" value="Provide feedback" class="btn" style="margin-top: 15px;">
+	              </form>
+
 	          </li>
 
 	        <% end %>

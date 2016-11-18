@@ -18,5 +18,8 @@ Rails.application.routes.draw do
 
 	delete '/appointments/:id' => 'appointments#destroy' 
 
+  get '/reviews/:id/new' => 'reviews#new'
+
   resources :appointments
+
 end
