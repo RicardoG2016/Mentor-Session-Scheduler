@@ -22,7 +22,8 @@
 	                <input type="hidden" name="_method" value="delete">
 	                <input type="submit" value="Cancel Appointment" class="btn inline" style="margin-top: 15px;">
 	              </form>
-								<% if left_feedback?(meeting) == false %>
+
+								<% if past_appointment?(meeting) && left_feedback?(meeting) == false %>
 									<form method="get" action="/reviews/<%= meeting.id %>/new" class="inline"> 
 	                	<input type="submit" value="Provide feedback" class="btn inline" style="margin-top: 15px;">
 	              	</form>
@@ -33,9 +34,6 @@
 									<a href="/reviews/<%= meeting.id %>/show">Rating:</a> ( <%= meeting.reviews[0].rating %> / 5 )
 									</p>
 								<% end %>
-									
-
-
 	              </div>
 
 	          </li>
@@ -48,7 +46,7 @@
 
 	<!-- Student section below -->
 	      <% if Appointment.where(student: current_user).count > 0  %>
-	      <h2> Below are the appointments you're getting help on</h2>
+	      <h2 class="lower-list"> Below are the appointments you're getting help on</h2>
 	          <% Appointment.where(student: current_user).each do |meeting| %>
 
 	          <li> 
@@ -72,6 +70,7 @@
 	          </li>
 
 	        <% end %>
+
 	      <% else %>
 	          <h3 class="no-appt-msg"> It looks like you don't have any student appointments at this time. Create your first appointment below.</h3>
 	      <% end%>

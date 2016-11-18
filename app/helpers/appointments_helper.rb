@@ -13,7 +13,7 @@ module AppointmentsHelper
 	end
 
 	def past_appointment?(appt)
-		return true if appt.end_time < DateTime.now
+		return true if (appt.end_time.to_time - 6.hours).to_datetime < DateTime.now
 		return false
 	end
 end

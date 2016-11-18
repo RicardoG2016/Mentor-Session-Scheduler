@@ -186,8 +186,10 @@ div.text-vertical-center > h2 {
 }
 
 #user-show > h1 {
-    font-size: 30px;
+    margin-top: 25px;
+    font-size: 35px;
 }
+
 
 #user-show > ul > h2 {
     font-size: 26px;
@@ -312,7 +314,8 @@ input.auth-btn {
     padding: 45px;
 }
 
-
-
+.lower-list {
+    margin-top: 75px;
+}
 
 
