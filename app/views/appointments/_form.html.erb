@@ -1,4 +1,4 @@
-<%= form_for @appointment do |f| %>
+<%= form_for @appointment, html: {class: "appointment-form"} do |f| %>
   <%= f.label :topic %>
   <%= f.text_field :topic, placeholder: 'Biology' %> <br>
   <%= f.label :date %>

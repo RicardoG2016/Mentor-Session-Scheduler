@@ -14,6 +14,7 @@
     <%= stylesheet_link_tag    'vendor/bootstrap/css/bootstrap.min', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <%= stylesheet_link_tag    'vendor/bootstrap/css/stylish-portfolio', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <!-- Custom Fonts -->
@@ -26,21 +27,17 @@
   </head>
 
   <body>
-    <nav> 
+    <nav class="layout-nav"> 
       <%= link_to "Home", root_path %>
 
     <% if current_user %>
       <a href="/users/show"><%= current_user.first_name %> <%= current_user.last_name[0].upcase %>. </a>
       <a href="/users/logout">Logout</a>
-      <%= link_to "Create Appointment", new_appointment_path %>
     <% else %>
-      <%= link_to "Sign in", new_user_session_path %>
+      <%= link_to "Login", new_user_session_path %>
       <%= link_to "Register", new_user_registration_path %>
       <% end %>
     </nav>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
     <%= yield %>
   </body>
 </html>
