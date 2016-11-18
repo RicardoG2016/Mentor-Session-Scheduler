@@ -1,6 +1,10 @@
 class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
+
+  def home
+  end 
+
   def signup
     redirect_to(new_user_session_path) and return if !current_user
     appt = Appointment.find(params[:id])
@@ -10,7 +14,7 @@ class AppointmentsController < ApplicationController
       appt.save
     end
     redirect_to(appointments_path)
-  end
+  end 
 
   def index
     @appointments = Appointment.where(available: true)
