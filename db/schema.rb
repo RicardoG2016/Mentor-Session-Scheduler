@@ -26,12 +26,10 @@ ActiveRecord::Schema.define(version: 20161118155631) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer  "rating"
-    t.text     "comment"
-    t.integer  "user_id"
-    t.integer  "appointment_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer "rating"
+    t.text    "comment"
+    t.integer "user_id"
+    t.integer "appointment_id"
   end
 
   create_table "users", force: :cascade do |t|
