@@ -1,30 +1,31 @@
-<%= form_tag("/reviews/#{params[:id]}", method: "post") do |f| %>
+<form action="/reviews/<%= params[:id] %>" method="post" class="form-register">
   <div class="form-register-with-email">
     <div class="form-white-background">
       <div class="form-title-row">
-        <!-- optional -->
         <h1> Provide Feedback </h1>
-
-          <div class="field">
-            <label>Rating</label><br>
-            <%= f.select :rating, ['1', '2', '3', '4','5'] %>
-          </div>
-
-          <div class="field">
-            <label>Comment</label><br>
-            <%= f.text_field :comment, placeholder: 'Leave feedback here' %>
-          </div>
-
-          <div class="form-row">
-            <%= f.button "Post Feedback" %>
-          </div>
-
       </div>
+        <div class="field">
+          <label>Rating (1 - 5)</label> <br>
+          <select name="rating" class="rating-select">
+            <option value="1"> 1 </option>
+            <option value="2"> 2 </option>
+            <option value="3"> 3 </option>
+            <option value="4"> 4 </option>
+            <option value="5"> 5 </option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Comment</label><br>
+          <input type="text" name="comment" placeholder="How did your session go?">
+        </div>
+
+        <div class="form-row">
+          <input type="submit" value="Post Feedback" class="btn auth-btn">
+        </div>
     </div>
   </div>
 
-<% end %>
-
 <% if @error %>
-    <%= @error %>
-  <% end %>
+  <%= @error %>
+<% end %>

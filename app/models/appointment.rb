@@ -41,7 +41,9 @@ class Appointment < ApplicationRecord
 		end
 		time[1].slice!(-2..-1)
 		minute = time[1].to_i
-		DateTime.new(year, month, day, hour, minute)
+		d = DateTime.new(year, month, day, hour, minute)
+		(d.to_time + 6.hours).to_datetime
+
 	end
 
 	def generate_end_time(params)
