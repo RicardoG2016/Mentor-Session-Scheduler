@@ -9,19 +9,23 @@
 	          <% Appointment.where(mentor: current_user).each do |meeting| %>
 	          
 	          <li> 
-	              <h3> <%= meeting.topic %> | <%= display_datetime(meeting) %> (<%= meeting.interval %> minutes) </h3>
+	          		<hr>
+	          		<div>
+	              <h3> <%= meeting.topic %> | <%= display_datetime(meeting) %> </h3>
 	              <% if meeting.student %>
 									<h3> Your Student: <%= meeting.student.first_name %> <%= meeting.student.last_name[0].upcase %>. </h3>
 	              <% end %>
+	              <h3> (<%= meeting.interval %> minutes) </h3>
 	              <form  method="post" action="/appointments/<%= meeting.id %>"> 
 	                <input type="hidden" name="_method" value="delete">
 	                <input type="submit" value="Cancel Appointment" class="btn" style="margin-top: 15px;">
 	              </form>
+	              </div>
 	          </li>
 
 	        <% end %>
 	        <% else %>
-	          <h2> It looks like you don't have any mentoring appointments at this time. Create your first appointment below.</h2>
+	          <h3> It looks like you don't have any mentoring appointments at this time. Create your first appointment below.</h3>
 	      <% end%>
 
 
@@ -31,17 +35,21 @@
 	          <% Appointment.where(student: current_user).each do |meeting| %>
 
 	          <li> 
-	              <h3> <%= meeting.topic %> | <%= display_datetime(meeting) %> (<%= meeting.interval %> minutes) </h3>
+	          		<hr>
+	          		<div>
+	              <h3> <%= meeting.topic %> | <%= display_datetime(meeting) %> </h3>
 	              <h3> Your Teacher: <%= meeting.mentor.first_name %>, <%= meeting.mentor.last_name[0].upcase %>. </h3>
+	              <h3> (<%= meeting.interval %> minutes) </h3>
 	              <form  method="post" action="/appointments/<%= meeting.id %>"> 
 	                <input type="hidden" name="_method" value="put">
 	                <input type="submit" value="Cancel Appointment" class="btn" style="margin-top: 15px;">
 	              </form>
+	              </div>
 	          </li>
 
 	        <% end %>
 	      <% else %>
-	          <h2> It looks like you don't have any student appointments at this time. Create your first appointment below.</h2>
+	          <h3> It looks like you don't have any student appointments at this time. Create your first appointment below.</h3>
 	      <% end%>
 
 	  </ul>

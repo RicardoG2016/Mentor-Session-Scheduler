@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  include AppointmentsHelper
   # GET /appointments
   # GET /appointments.json
 
@@ -18,6 +19,7 @@ class AppointmentsController < ApplicationController
 
   def index
     redirect_to(new_user_session_path) and return if !current_user
+    filter_past_appointments(Appointment.all)
     @appointments = Appointment.where(available: true)
   end
 

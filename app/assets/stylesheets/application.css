@@ -166,18 +166,18 @@ div.text-vertical-center > h2 {
 }
 
 .index-btn {
+    text-shadow: .8px .8px #424242;
     color: #FFF;
     margin: 20px;
     margin-top: 5px;
     padding: 15px;
     width: 150px;
     font-size: 22px;
-    background-color: #FFE242;
-    text-shadow: 1px 1px #6b6b6b;
+    background-color: #FF951C;
 }
 
 .index-btn:hover {
-    background-color: #FFE066;
+    background-color: #FF8800;
 }
 
 #user-show {
@@ -190,11 +190,22 @@ div.text-vertical-center > h2 {
 }
 
 #user-show > ul > h2 {
-    font-size: 22px;
+    font-size: 26px;
 }
 
 #user-show > ul > li > h3 {
     font-size: 19px;
+}
+
+#user-show > ul > li {
+    margin: auto;
+    text-align: left;
+    width: 550px;
+}
+
+#user-show > ul > li > div {
+    width: 400px;
+    margin: auto;
 }
 
 #appointments-index > h2 {
@@ -228,9 +239,9 @@ li {
 }
 
 input.btn {
-    background-color: #FFE242;
+    background-color: #FF951C;
     color: #f9f9f9;
-    text-shadow: 1px 1px #6b6b6b;
+    text-shadow: .8px .8px #515151  ;
     padding-top: 7px;
     padding-bottom: 7px;
     padding-left: 11px;
@@ -239,7 +250,7 @@ input.btn {
 
 input.btn:hover {
     color: #f9f9f9;
-    background-color: #FFE066;
+    background-color: #FF8800;
 }
 
 header#top {
