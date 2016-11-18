@@ -2,22 +2,38 @@
   <div class="form-register-with-email">
     <div class="form-white-background">
       <div class="form-title-row">
+
         <!-- optional -->
         <h1> Provide Feedback </h1>
 
-          <div class="field">
-            <label>Rating</label><br>
-            <%= f.select :rating, ['1', '2', '3', '4','5'] %>
-          </div>
+<div class="txt-center">
+    <form>
+        <div class="rating">
+            <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+            <label for="star5">☆</label>
+            <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+            <label for="star4">☆</label>
+            <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+            <label for="star3">☆</label>
+            <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
+            <label for="star2">☆</label>
+            <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+            <label for="star1">☆</label>
+            <div class="clear"></div>
+        </div>
+    </form>
+</div>
+
 
           <div class="field">
-            <label>Comment</label><br>
-            <%= f.text_field :comment, placeholder: 'Leave feedback here' %>
+            <label for="Comment">Comment</label><br>
+            <input type="text" name="comment", placeholder: 'Leave feedback here'>
           </div>
 
           <div class="form-row">
-            <%= f.button "Post Feedback" %>
+            <input type="submit" value="Post Feedback">
           </div>
+
 
       </div>
     </div>
@@ -25,6 +41,8 @@
 
 <% end %>
 
-<% if @error %>
+  <% if @error %>
     <%= @error %>
   <% end %>
+
+
