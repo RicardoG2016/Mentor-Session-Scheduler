@@ -180,7 +180,7 @@ div.text-vertical-center > h2 {
     background-color: #FF8800;
 }
 
-#user-show {
+#user-show, #review-show {
     text-align: center;
     margin: auto;
 }
@@ -285,6 +285,34 @@ input.auth-btn {
     letter-spacing: 1.5px;
     padding-top: 10px;
 }
+
+#appointment-topic {
+    margin-top: 80px;
+    font-size: 60px !important;
+    font-family: 'Raleway', sans-serif;
+}
+
+.feedback-h2 {
+    font-family: 'Questrial', sans-serif;
+    font-size: 45px;
+    margin-top: 20px;
+}
+
+.feedback-body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    margin-top: 8px;
+}
+
+#review-show {
+    width: 666px;
+}
+
+.no-appt-msg {
+    padding: 45px;
+}
+
+
 
 
 
