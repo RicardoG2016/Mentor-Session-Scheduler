@@ -22,8 +22,7 @@
 	                <input type="hidden" name="_method" value="delete">
 	                <input type="submit" value="Cancel Appointment" class="btn inline" style="margin-top: 15px;">
 	              </form>
-
-								<% if past_appointment?(meeting) && left_feedback?(meeting) == false %>
+								<% if left_feedback?(meeting) == false %>
 									<form method="get" action="/reviews/<%= meeting.id %>/new" class="inline"> 
 	                	<input type="submit" value="Provide feedback" class="btn inline" style="margin-top: 15px;">
 	              	</form>
@@ -35,12 +34,11 @@
 									</p>
 								<% end %>
 	              </div>
-
 	          </li>
 
 	        <% end %>
 	        <% else %>
-	          <h3 class="no-appt-msg"> It looks like you don't have any mentoring appointments at this time. Create your first appointment below.</h3>
+	          <h3 class="no-appt-msg"> You currently have no available office hours. </h3>
 	      <% end%>
 
 
@@ -72,7 +70,7 @@
 	        <% end %>
 
 	      <% else %>
-	          <h3 class="no-appt-msg"> It looks like you don't have any student appointments at this time. Create your first appointment below.</h3>
+	          <h3 class="no-appt-msg"> You currently have no scheduled tutoring sessions. </h3>
 	      <% end%>
 
 	  </ul>
