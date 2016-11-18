@@ -144,8 +144,8 @@ nav.layout-nav > a:hover {
 
 header.header, #top {
     height: 600px;
-    color: #f9fcff;
-    text-shadow: 1px 1px black;
+    color: #f9f9f7;
+    text-shadow: 1px 1px #282828;
 }
 
 div.text-vertical-center {
@@ -166,17 +166,18 @@ div.text-vertical-center > h2 {
 }
 
 .index-btn {
+    color: #FFF;
     margin: 20px;
     margin-top: 5px;
     padding: 15px;
     width: 150px;
     font-size: 22px;
-    background-color: #2d2d2d;
-    text-shadow: none;
+    background-color: #FFE242;
+    text-shadow: 1px 1px #6b6b6b;
 }
 
 .index-btn:hover {
-    background-color: #444444;
+    background-color: #FFE066;
 }
 
 #user-show {
@@ -227,16 +228,27 @@ li {
 }
 
 input.btn {
-    background-color: #43bbf2;
+    background-color: #FFE242;
+    color: #f9f9f9;
+    text-shadow: 1px 1px #6b6b6b;
     padding-top: 7px;
     padding-bottom: 7px;
     padding-left: 11px;
     padding-right: 11px;
 }
 
+input.btn:hover {
+    color: #f9f9f9;
+    background-color: #FFE066;
+}
+
 header#top {
     background-image: url(image_one.jpg)
 }
 
-
+input.auth-btn {
+    margin-top: 10px;
+    width: 120px;
+    height: 45px;
+}
 
