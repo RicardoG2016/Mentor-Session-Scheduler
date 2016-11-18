@@ -254,7 +254,8 @@ input.btn:hover {
 }
 
 header#top {
-    background-image: url(image_two.jpg)
+    background-image: url(image_two.jpg);
+    font-family: 'Questrial', sans-serif;
 }
 
 input.auth-btn {
@@ -263,3 +264,6 @@ input.auth-btn {
     height: 45px;
 }
 
+#appt-new {
+    width: 150px;
+}
