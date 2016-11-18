@@ -1,20 +1,24 @@
-<h1>Appointments</h1>
-<ul>
-	<% if @appointments %>
+<div class="appointments-index">
+<% if @appointments.length > 0 %>
+	<h1>Appointments</h1>
+	<ul>
 		<% @appointments.each do |appt| %>
 			<li>
-				<%= appt.topic %> | <%= appt.mentor.first_name %> <%= appt.mentor.last_name[0].upcase %>.
-				<br>
+				<h2> <%= appt.topic %> | <%= appt.mentor.first_name %> <%= appt.mentor.last_name[0].upcase %>. </h2>
+				<h3>
 				<%= display_datetime(appt) %>
 				(<%= appt.interval %> mins)
-				<br>
-				<form action="appointments/<%= appt.id %>/signup" method="post">
-					<input type="submit" value="Sign Up">
+				</h3>
+				<form action="/appointments/<%= appt.id %>/signup" method="post">
+					<input type="submit" value="Sign Up" class="btn" style="margin-top: 10px;">
 				</form>
 			</li>
 		<% end %>
-	<% end %>
-</ul>
+	</ul>
+<% else %>
+	<h1> There are currently no openings </h1>
+<% end %>
+</div>
 
 
 

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
 	post "appointments/:id/signup" => 'appointments#signup'
 
+  get 'appointments/index' => 'appointments#index'
+
 	get 'users/show', to: 'users#show'
 
 	delete '/appointments/:id' => 'appointments#destroy' 

@@ -13,7 +13,7 @@ class AppointmentsController < ApplicationController
       appt.student = current_user
       appt.save
     end
-    redirect_to("/")
+    redirect_to("/appointments/index")
   end 
 
   def index

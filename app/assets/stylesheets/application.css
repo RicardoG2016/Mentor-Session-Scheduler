@@ -124,8 +124,10 @@ nav.layout-nav {
     height: 130px;
     margin: auto;
     padding-top: 35px;
-    text-shadow: 1px 1px black;
-    background: #161616;
+    text-shadow: 1px 1px grey;
+    background: #43bbf2;
+    border-bottom: 1px solid grey;
+
 }
 
 nav.layout-nav > a {
@@ -135,13 +137,28 @@ nav.layout-nav > a {
     padding: 5%;
 }
 
+nav.layout-nav > a:hover {
+    text-decoration: none;
+    color: #dee1e5;
+}
+
 header.header, #top {
     height: 600px;
+    color: #f9fcff;
+    text-shadow: 1px 1px black;
 }
 
 div.text-vertical-center {
     padding-top: 150px;
     vertical-align: inherit;
+}
+
+div.text-vertical-center > h1 {
+    font-size: 70px;
+}
+
+div.text-vertical-center > h2 {
+    font-size: 35px;
 }
 
 .form-register, .appointment-form {
@@ -154,6 +171,12 @@ div.text-vertical-center {
     padding: 15px;
     width: 150px;
     font-size: 22px;
+    background-color: #2d2d2d;
+    text-shadow: none;
+}
+
+.index-btn:hover {
+    background-color: #444444;
 }
 
 #user-show {
@@ -169,6 +192,18 @@ div.text-vertical-center {
     font-size: 22px;
 }
 
+#user-show > ul > li > h3 {
+    font-size: 19px;
+}
+
+#appointments-index > h2 {
+    font-size: 28px;
+}
+
+#appointments-index > ul > li > h3 {
+    font-size: 20px;
+}
+
 ul {
     list-style: none;
 }
@@ -178,8 +213,30 @@ ul {
     font-size: 17px;
 }
 
+.appointments-index {
+    margin: auto;
+    text-align: center;
+}
 
+.appointments-index > h1 {
+    font-size: 45px;
+}
 
+li {
+    margin-right: 22px;
+}
+
+input.btn {
+    background-color: #43bbf2;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+header#top {
+    background-image: url(image_one.jpg)
+}
 
 
 
