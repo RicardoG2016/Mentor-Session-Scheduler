@@ -1,6 +1,6 @@
 module AppointmentsHelper
 	def display_datetime(appt)
-		local_time(appt.start_time)
+		local_time( (appt.start_time.to_time - 6.hours).to_datetime )
 	end
 
 	def filter_past_appointments(appointments)

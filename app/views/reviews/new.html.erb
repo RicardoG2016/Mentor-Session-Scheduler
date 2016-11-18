@@ -1,48 +1,33 @@
-<%= form_tag("/reviews/#{params[:id]}", method: "post") do |f| %>
+<form action="/reviews/<%= params[:id] %>" method="post" class="form-register">
   <div class="form-register-with-email">
     <div class="form-white-background">
       <div class="form-title-row">
 
-        <!-- optional -->
         <h1> Provide Feedback </h1>
-
-<div class="txt-center">
-    <form>
-        <div class="rating">
-            <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
-            <label for="star5">☆</label>
-            <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
-            <label for="star4">☆</label>
-            <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
-            <label for="star3">☆</label>
-            <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
-            <label for="star2">☆</label>
-            <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
-            <label for="star1">☆</label>
-            <div class="clear"></div>
-        </div>
-    </form>
-</div>
-
-
-          <div class="field">
-            <label for="Comment">Comment</label><br>
-            <input type="text" name="comment", placeholder: 'Leave feedback here'>
-          </div>
-
-          <div class="form-row">
-            <input type="submit" value="Post Feedback">
-          </div>
-
-
       </div>
+        <div class="field">
+          <label>Rating (1 - 5)</label> <br>
+          <select name="rating" class="rating-select">
+            <option value="1"> 1 </option>
+            <option value="2"> 2 </option>
+            <option value="3"> 3 </option>
+            <option value="4"> 4 </option>
+            <option value="5"> 5 </option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Comment</label><br>
+          <input type="text" name="comment" placeholder="How did your session go?">
+        </div>
+
+        <div class="form-row">
+          <input type="submit" value="Post Feedback" class="btn auth-btn">
+        </div>
     </div>
   </div>
 
+<% if @error %>
+  <%= @error %>
 <% end %>
-
-  <% if @error %>
-    <%= @error %>
-  <% end %>
-
 

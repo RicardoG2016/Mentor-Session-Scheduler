@@ -1,0 +1,17 @@
+<div id="user-show">
+  <h1> <%= @appointment.topic %> </h1>
+  <% if mentor_feedback(@appointment) %>
+  <h2> Mentor Feedback: </h2>
+  <p> <%= mentor_feedback(@appointment).rating %> out of 5 stars </p>
+  <p> "<%= mentor_feedback(@appointment).comment %>" </p>
+  <% else %>
+  <h2> The mentor hasn't left any feedback yet. </h2>
+  <% end %>
+  <% if student_feedback(@appointment) %>
+    <h2> Student Feedback: </h2>
+    <p> <%= student_feedback(@appointment).rating %> out of 5 stars </p>
+    <p> "<%= student_feedback(@appointment).comment %>" </p>
+  <% else %>
+    <h2> The student hasn't left any feedback yet. </h2>
+  <% end %>
+</div>

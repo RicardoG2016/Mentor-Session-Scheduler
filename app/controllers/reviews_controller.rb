@@ -12,11 +12,15 @@ def create
   @review.user = current_user
   @review.appointment = @appointment
   if @review.save
-    redirect '/users/show'
+    redirect_to '/users/show'
   else
     @error = "Please enter a valid input"
     render 'new'
   end
+end
+
+def show
+  @appointment = Appointment.find(params[:id])
 end
 
 end

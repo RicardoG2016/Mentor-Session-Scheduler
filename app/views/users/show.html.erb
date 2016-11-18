@@ -18,15 +18,22 @@
 
 	              <h3> (<%= meeting.interval %> minutes) </h3>
 
-	              <form  method="post" action="/appointments/<%= meeting.id %>"> 
+	              <form  method="post" action="/appointments/<%= meeting.id %>" class="inline"> 
 	                <input type="hidden" name="_method" value="delete">
-	                <input type="submit" value="Cancel Appointment" class="btn" style="margin-top: 15px;">
+	                <input type="submit" value="Cancel Appointment" class="btn inline" style="margin-top: 15px;">
 	              </form>
-
-						<!-- include the logic if date is passed the meeting end time -->
-	              <form method="get" action="/reviews/<%= meeting.id %>/new"> 
-	                <input type="submit" value="Provide feedback" class="btn" style="margin-top: 15px;">
-	              </form>
+								<% if left_feedback?(meeting) == false %>
+									<form method="get" action="/reviews/<%= meeting.id %>/new" class="inline"> 
+	                	<input type="submit" value="Provide feedback" class="btn inline" style="margin-top: 15px;">
+	              	</form>
+								<% end %>
+								<br>
+								<% if meeting.reviews.length > 0 %>
+									<p class="feedback-display">
+									<a href="/reviews/<%= meeting.id %>/show">Rating:</a> ( <%= meeting.reviews[0].rating %> / 5 )
+									</p>
+								<% end %>
+									
 
 
 	              </div>
@@ -50,13 +57,13 @@
 	              <h3> <%= meeting.topic %> | <%= display_datetime(meeting) %> </h3>
 	              <h3> Your Teacher: <%= meeting.mentor.first_name %>, <%= meeting.mentor.last_name[0].upcase %>. </h3>
 	              <h3> (<%= meeting.interval %> minutes) </h3>
-	              <form  method="post" action="/appointments/<%= meeting.id %>"> 
+	              <form  method="post" action="/appointments/<%= meeting.id %>" class="inline"> 
 	                <input type="hidden" name="_method" value="put">
-	                <input type="submit" value="Cancel Appointment" class="btn" style="margin-top: 15px;">
+	                <input type="submit" value="Cancel Appointment" class="btn inline" style="margin-top: 15px;">
 	              </form>
-<!-- include the logic if date is passed the meeting end time -->
-	              <form method="get" action="/reviews/<%= meeting.id %>/new"> 
-	                <input type="submit" value="Provide feedback" class="btn" style="margin-top: 15px;">
+								<!-- include the logic if date is passed the meeting end time -->
+	              <form method="get" action="/reviews/<%= meeting.id %>/new" class="inline"> 
+	                <input type="submit" value="Provide feedback" class="btn inline" style="margin-top: 15px;">
 	              </form>
 
 

@@ -126,7 +126,7 @@ nav.layout-nav {
     padding-top: 35px;
     text-shadow: 1px 1px grey;
     background: #43bbf2;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #606060;
 
 }
 
@@ -267,4 +267,24 @@ input.auth-btn {
 #appt-new {
     width: 150px;
 }
+
+.inline {
+    display: inline;
+}
+
+.rating-select {
+    width: 90px;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.feedback-display {
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    padding-top: 10px;
+}
+
+
 

@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
   get '/reviews/:id/new' => 'reviews#new'
 
-  post '/reviews/:id/new' => 'reviews#create'
+  post '/reviews/:id' => 'reviews#create'
+
+  get '/reviews/:id/show' => 'reviews#show'
 
   resources :appointments
 
