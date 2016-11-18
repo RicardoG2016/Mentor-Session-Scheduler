@@ -1,6 +1,11 @@
 class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
+  
+
+  def home
+  end
+
   def index
     @appointments = Appointment.all
   end

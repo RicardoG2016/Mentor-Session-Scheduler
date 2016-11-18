@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   get "users/logout"
 
-	root "appointments#index"
+	# root "appointments#index"
+
+  root "appointments#home"
 
 get 'users/show', to: 'users#show'
 
