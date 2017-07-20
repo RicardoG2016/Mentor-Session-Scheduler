@@ -1,5 +1,5 @@
 
-#Mentor Session Scheduler
+# Mentor Session Scheduler
 
 ## Rails application allows mentors to schedule office hours and students to schedule time for office hours.
 
